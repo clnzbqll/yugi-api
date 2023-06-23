@@ -2,40 +2,74 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.13</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
     <groupId>com.example</groupId>
     <artifactId>yugi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>yugi</name>
     <description>yugi</description>
+
+    <!-- 父模块的打包方式需指明为pom（标签默认jar） -->
+    <packaging>pom</packaging>
+
     <properties>
         <java.version>1.8</java.version>
+        <!-- maven-compiler-plugin默认jdk为1.6 -->
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <spring.boot.version>2.7.12</spring.boot.version>
+        <yugi.version>0.0.1-SNAPSHOT</yugi.version>
+
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <!-- 父模块需引入子模块 -->              <!-- 子模块间的依赖模型       -->
+    <modules>                            <!-- controller ↖          -->
+        <module>yugi-admin</module>      <!--             framework -->
+        <module>yugi-common</module>     <!--  service   ↗          -->
+        <module>yugi-framework</module>  <!--     ￪                 -->
+        <module>yugi-model</module>      <!--   model    ↖          -->
+        <module>yugi-service</module>    <!--             common    -->
+    </modules>
 
-    <build>
-        <plugins>
-            <plugin>
+    <dependencyManagement>
+        <dependencies>
+            <!-- springboot -->
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <!-- import只能在dependencyManagement中使用，且此时<type>标签值需为pom -->
+                <!-- import表示将spring-boot-dependencies中dependencyManagement下的dependencies导入到当前的dependencyManagement中 -->
+            </dependency>
 
+            <!-- yugi核心模块-->
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>yugi-framework</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+
+            <!-- yugi服务模块 -->
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>yugi-service</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+
+            <!-- yugi数据持久模块 -->
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>yugi-model</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+
+            <!-- yugi通用模块 -->
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>yugi-common</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
