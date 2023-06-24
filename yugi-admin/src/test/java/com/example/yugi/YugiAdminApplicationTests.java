@@ -12,7 +12,7 @@ class YugiAdminApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("测试成功");
+        System.out.println("测试成功。");
         loginService.login();
     }
 }
