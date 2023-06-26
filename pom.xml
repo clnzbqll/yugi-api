@@ -33,7 +33,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- springboot -->
+            <!-- Springboot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -44,42 +44,49 @@
                 <!-- import表示将spring-boot-dependencies中dependencyManagement下的dependencies导入到当前的dependencyManagement中 -->
             </dependency>
 
-            <!-- mybaits -->
+            <!-- MyBaits -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybaits.version}</version>
             </dependency>
 
-            <!-- pagehelper -->
+            <!-- MyBatis-Plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.2.0</version>
+            </dependency>
+
+            <!-- PageHelper -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
 
-            <!-- yugi核心模块-->
+            <!-- Yugi核心模块-->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-framework</artifactId>
                 <version>${yugi.version}</version>
             </dependency>
 
-            <!-- yugi服务模块 -->
+            <!-- Yugi服务模块 -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-service</artifactId>
                 <version>${yugi.version}</version>
             </dependency>
 
-            <!-- yugi数据持久模块 -->
+            <!-- Yugi数据持久模块 -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-model</artifactId>
                 <version>${yugi.version}</version>
             </dependency>
 
-            <!-- yugi通用模块 -->
+            <!-- Yugi通用模块 -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-common</artifactId>

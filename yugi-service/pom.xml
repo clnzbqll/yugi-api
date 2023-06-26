@@ -16,13 +16,13 @@
     <description>yugi-service</description>
 
     <dependencies>
-        <!-- pagehelper -->
+        <!-- PageHelper -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- yugi数据持久模块 -->
+        <!-- Yugi数据持久模块 -->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>yugi-model</artifactId>

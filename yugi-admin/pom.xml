@@ -17,20 +17,20 @@
     <description>yugi-admin</description>
 
     <dependencies>
-        <!-- springboot客户端容器 -->
+        <!-- Springboot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- springboot测试组件 -->
+        <!-- Springboot Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- yugi核心模块 -->
+        <!-- Yugi核心模块 -->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>yugi-framework</artifactId>
