@@ -1,5 +1,7 @@
 package com.example.yugi.service.sys;
 
+import com.example.yugi.common.entity.Query;
+import com.example.yugi.common.entity.Table;
 import com.example.yugi.model.sys.domain.SysConfig;
 
 /**
@@ -10,4 +12,6 @@ import com.example.yugi.model.sys.domain.SysConfig;
  */
 public interface ISysConfigService {
      SysConfig queryById(Long id);
+
+     Table<SysConfig> page(Query query);
 }

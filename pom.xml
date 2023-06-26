@@ -19,6 +19,7 @@
         <spring.boot.version>2.7.12</spring.boot.version>
         <yugi.version>0.0.1-SNAPSHOT</yugi.version>
         <mybaits.version>2.2.0</mybaits.version>
+        <pagehelper.version>1.4.0</pagehelper.version>
     </properties>
 
     <!-- 父模块需引入子模块 -->              <!-- 子模块间的依赖模型       -->
@@ -48,6 +49,13 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybaits.version}</version>
+            </dependency>
+
+            <!-- pagehelper -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.version}</version>
             </dependency>
 
             <!-- yugi核心模块-->

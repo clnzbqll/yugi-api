@@ -1,23 +1,30 @@
-# Server??
+# Server配置
 server:
   port: 2000
 
-# Spring??
+# Spring配置
 spring:
   profiles:
     active: test
+  main:
+    allow-circular-references: true
 
-# ????
+# 日志配置
 logging:
   level:
     com.example.yugi: debug
 
-# MyBatis??
+# MyBatis配置
 mybatis:
-  mapper-locations: classpath*:mapper/**/*Mapper.xml  # mapper????
+  mapper-locations: classpath*:mapper/**/*Mapper.xml  # mapper文件路径
   configuration:
-    map-underscore-to-camel-case: true                # ????????
+    map-underscore-to-camel-case: true                # 驼峰与下划线转换
 
-
+# PageHelper配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 

@@ -14,5 +14,11 @@
         from sys_config
         where config_id = #{configId}
     </select>
+
+    <select id="list" resultType="com.example.yugi.model.sys.domain.SysConfig">
+        select
+            config_id, config_name, config_key, config_value, config_type
+        from sys_config
+    </select>
 </mapper>
 

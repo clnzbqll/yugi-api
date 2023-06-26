@@ -1,6 +1,8 @@
 package com.example.yugi.api.sys;
 
+import com.example.yugi.common.entity.Query;
 import com.example.yugi.common.entity.Result;
+import com.example.yugi.common.entity.Table;
 import com.example.yugi.model.sys.domain.SysConfig;
 import com.example.yugi.service.sys.ISysConfigService;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,11 @@ public class SysConfigController {
     @GetMapping("/find")
     public Result<SysConfig> find (Long id){
         return Result.success(sysConfigService.queryById(id));
+    }
+
+    @GetMapping("list")
+    public Result<Table<SysConfig>> page(Query query){
+        return Result.success(sysConfigService.page(query));
     }
 }
 

@@ -2,6 +2,7 @@ package com.example.yugi.model.sys.mapper;
 
 import com.example.yugi.model.sys.domain.SysConfig;
 import org.apache.ibatis.annotations.Param;
+import java.util.List;
 
 /**
  * 参数配置数据库访问层
@@ -11,5 +12,7 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface SysConfigMapper {
     SysConfig queryById(@Param("configId") Long configId);
+
+    List<SysConfig> list();
 }
 

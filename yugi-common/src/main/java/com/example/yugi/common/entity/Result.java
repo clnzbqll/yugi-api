@@ -5,11 +5,12 @@ import lombok.*;
 /**
  * 返回类
  *
- * @param <T> 泛型
+ * @param <T> 返回数据
  * @author jia
  * @since 2023-06-26 11:50:17
  */
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 public class Result<T> {
     private static final String SUCCESS = "success";
