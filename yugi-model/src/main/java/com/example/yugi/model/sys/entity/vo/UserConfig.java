@@ -1,4 +1,4 @@
-package com.example.yugi.model.sys.domain;
+package com.example.yugi.model.sys.entity.vo;
 
 import lombok.Data;
 

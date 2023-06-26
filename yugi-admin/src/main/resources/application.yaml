@@ -15,13 +15,9 @@ logging:
     com.example.yugi: debug
 
 # MyBatis配置
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:mapper/**/*Mapper.xml  # mapper文件路径
   configuration:
     map-underscore-to-camel-case: true                # 驼峰与下划线转换
-
-# PageHelper配置
-pagehelper:
-  helperDialect: mysql
 
 

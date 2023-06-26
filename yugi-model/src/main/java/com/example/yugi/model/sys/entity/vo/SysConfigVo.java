@@ -1,15 +1,11 @@
-package com.example.yugi.model.sys.domain;
+package com.example.yugi.model.sys.entity.vo;
 
 import lombok.Data;
 
-/**
- * 参数配置实体类
- *
- * @author jia
- * @since 2023-06-25 16:31:37
- */
+import java.nio.file.attribute.UserPrincipal;
+
 @Data
-public class SysConfig {
+public class SysConfigVo {
     /**
      * 参数主键
      */
@@ -37,4 +33,3 @@ public class SysConfig {
 
     private UserConfig userConfig;
 }
-

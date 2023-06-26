@@ -18,8 +18,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring.boot.version>2.7.12</spring.boot.version>
         <yugi.version>0.0.1-SNAPSHOT</yugi.version>
-        <mybaits.version>2.2.0</mybaits.version>
         <pagehelper.version>1.4.0</pagehelper.version>
+        <mybaits.plus.version>3.2.0</mybaits.plus.version>
     </properties>
 
     <!-- 父模块需引入子模块 -->              <!-- 子模块间的依赖模型       -->
@@ -44,11 +44,11 @@
                 <!-- import表示将spring-boot-dependencies中dependencyManagement下的dependencies导入到当前的dependencyManagement中 -->
             </dependency>
 
-            <!-- MyBaits -->
+            <!-- MyBatis-Plus -->
             <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybaits.version}</version>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybaits.plus.version}</version>
             </dependency>
 
             <!-- PageHelper -->

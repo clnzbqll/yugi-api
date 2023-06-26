@@ -23,11 +23,10 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- MyBaits -->
+        <!-- MyBatis-Plus -->
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybaits.version}</version>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
         <!-- Yugi通用模块 -->
