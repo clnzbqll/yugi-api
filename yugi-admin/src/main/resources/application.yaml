@@ -1,8 +1,23 @@
+# Server??
 server:
   port: 2000
 
+# Spring??
 spring:
   profiles:
     active: test
+
+# ????
+logging:
+  level:
+    com.example.yugi: debug
+
+# MyBatis??
+mybatis:
+  mapper-locations: classpath*:mapper/**/*Mapper.xml  # mapper????
+  configuration:
+    map-underscore-to-camel-case: true                # ????????
+
+
 
 

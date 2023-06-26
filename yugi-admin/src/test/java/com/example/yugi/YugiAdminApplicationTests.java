@@ -1,6 +1,6 @@
 package com.example.yugi;
 
-import com.example.yugi.sys.ILoginService;
+import com.example.yugi.service.sys.ILoginService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import javax.annotation.Resource;

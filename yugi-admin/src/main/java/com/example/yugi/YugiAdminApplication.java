@@ -1,12 +1,20 @@
 package com.example.yugi;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Yugi启动程序
+ *
+ * @author jia
+ * @since 2023-06-25 17:02:57
+ */
+@Slf4j
 @SpringBootApplication
 public class YugiAdminApplication {
     public static void main(String[] args) {
         SpringApplication.run(YugiAdminApplication.class, args);
-        System.out.println("阿姨，一份儿童套餐！");
+        log.info("阿姨，一份儿童套餐！");
     }
 }

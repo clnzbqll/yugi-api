@@ -18,7 +18,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring.boot.version>2.7.12</spring.boot.version>
         <yugi.version>0.0.1-SNAPSHOT</yugi.version>
-
+        <mybaits.version>2.2.0</mybaits.version>
     </properties>
 
     <!-- 父模块需引入子模块 -->              <!-- 子模块间的依赖模型       -->
@@ -41,6 +41,13 @@
                 <scope>import</scope>
                 <!-- import只能在dependencyManagement中使用，且此时<type>标签值需为pom -->
                 <!-- import表示将spring-boot-dependencies中dependencyManagement下的dependencies导入到当前的dependencyManagement中 -->
+            </dependency>
+
+            <!-- mybaits -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybaits.version}</version>
             </dependency>
 
             <!-- yugi核心模块-->

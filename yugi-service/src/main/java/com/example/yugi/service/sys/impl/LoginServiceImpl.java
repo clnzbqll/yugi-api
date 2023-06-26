@@ -1,8 +1,6 @@
-package com.example.yugi.sys.impl;
+package com.example.yugi.service.sys.impl;
 
-import com.example.yugi.sys.ILoginService;
-import org.springframework.stereotype.Service;
-
+import com.example.yugi.service.sys.ILoginService;
 import org.springframework.stereotype.Service;
 
 /**

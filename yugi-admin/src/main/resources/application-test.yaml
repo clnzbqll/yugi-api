@@ -1,4 +1,6 @@
+# Spring??
 spring:
+  # ???
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://10.2.0.55:3306/odms?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false

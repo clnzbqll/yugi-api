@@ -1,4 +1,4 @@
-package com.example.yugi.sys;
+package com.example.yugi.service.sys;
 
 /**
  * 系统登入服务接口

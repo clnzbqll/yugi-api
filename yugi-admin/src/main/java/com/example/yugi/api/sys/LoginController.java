@@ -1,5 +1,6 @@
-package com.example.yugi.sys;
+package com.example.yugi.api.sys;
 
+import com.example.yugi.service.sys.ILoginService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
