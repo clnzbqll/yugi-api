@@ -9,5 +9,5 @@ import com.example.yugi.model.sys.entity.domain.SysDictType;
  * @author jia
  * @since 2023-06-27 09:30:53
  */
-public interface SysDictTypeService extends IService<SysDictType> {
+public interface ISysDictTypeService extends IService<SysDictType> {
 }

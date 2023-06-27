@@ -1,7 +1,7 @@
 package com.example.yugi;
 
 import com.example.yugi.model.sys.entity.domain.SysDictType;
-import com.example.yugi.service.sys.SysDictTypeService;
+import com.example.yugi.service.sys.ISysDictTypeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import javax.annotation.Resource;
@@ -19,11 +19,11 @@ class YugiAdminApplicationTests {
      * 服务对象
      */
     @Resource
-    private SysDictTypeService sysDictTypeService;
+    private ISysDictTypeService ISysDictTypeService;
 
     @Test
     void contextLoads() {
-        List<SysDictType> list = sysDictTypeService.list();
+        List<SysDictType> list = ISysDictTypeService.list();
         System.out.println(list);
     }
 }
