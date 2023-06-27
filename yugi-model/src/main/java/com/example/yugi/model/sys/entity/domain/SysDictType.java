@@ -6,8 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.example.yugi.common.entity.Field;
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * 字典类型实体类
  *

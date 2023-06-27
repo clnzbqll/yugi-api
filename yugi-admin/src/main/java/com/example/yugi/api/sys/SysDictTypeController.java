@@ -1,6 +1,11 @@
 package com.example.yugi.api.sys;
 
+import com.example.yugi.common.entity.Query;
+import com.example.yugi.common.entity.Result;
+import com.example.yugi.common.entity.Table;
+import com.example.yugi.model.sys.entity.domain.SysDictType;
 import com.example.yugi.service.sys.ISysDictTypeService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
@@ -18,6 +23,11 @@ public class SysDictTypeController {
      * 服务对象
      */
     @Resource
-    private ISysDictTypeService ISysDictTypeService;
+    private ISysDictTypeService sysDictTypeService;
+
+    @GetMapping("/page")
+    public Result<Table<SysDictType>> page(Query query){
+        return Result.success(sysDictTypeService.page(query));
+    }
 }
 

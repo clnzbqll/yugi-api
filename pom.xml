@@ -23,7 +23,7 @@
     </properties>
 
     <!-- 父模块需引入子模块 -->              <!-- 子模块间的依赖模型       -->
-    <modules>                            <!-- controller ↖          -->
+    <modules>                            <!--   admin    ↖          -->
         <module>yugi-admin</module>      <!--             framework -->
         <module>yugi-common</module>     <!--  service   ↗          -->
         <module>yugi-framework</module>  <!--     ￪                 -->

@@ -18,6 +18,6 @@ public class SysUserController {
      * 服务对象
      */
     @Resource
-    private ISysUserService ISysUserService;
+    private ISysUserService sysUserService;
 }
 
