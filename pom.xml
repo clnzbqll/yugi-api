@@ -58,28 +58,28 @@
                 <version>${pagehelper.version}</version>
             </dependency>
 
-            <!-- Yugi核心模块-->
+            <!-- Yugi Framework-->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-framework</artifactId>
                 <version>${yugi.version}</version>
             </dependency>
 
-            <!-- Yugi服务模块 -->
+            <!-- Yugi Service -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-service</artifactId>
                 <version>${yugi.version}</version>
             </dependency>
 
-            <!-- Yugi数据持久模块 -->
+            <!-- Yugi Model -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-model</artifactId>
                 <version>${yugi.version}</version>
             </dependency>
 
-            <!-- Yugi通用模块 -->
+            <!-- Yugi Common -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-common</artifactId>

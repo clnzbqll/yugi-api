@@ -15,7 +15,7 @@
     <description>yugi-framework</description>
 
     <dependencies>
-        <!-- Yugi服务模块 -->
+        <!-- Yugi Service -->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>yugi-service</artifactId>

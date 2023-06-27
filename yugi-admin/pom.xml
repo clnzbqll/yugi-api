@@ -30,7 +30,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Yugi核心模块 -->
+        <!-- Yugi Framework -->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>yugi-framework</artifactId>

@@ -29,7 +29,7 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
-        <!-- Yugi通用模块 -->
+        <!-- Yugi Common -->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>yugi-common</artifactId>
