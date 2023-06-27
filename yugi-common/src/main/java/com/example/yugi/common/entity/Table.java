@@ -1,10 +1,8 @@
 package com.example.yugi.common.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.List;
 
 /**

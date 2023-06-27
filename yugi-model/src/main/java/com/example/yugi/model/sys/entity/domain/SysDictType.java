@@ -3,6 +3,9 @@ package com.example.yugi.model.sys.entity.domain;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.example.yugi.common.entity.Field;
+import lombok.Data;
+
 import java.util.Date;
 
 /**
@@ -11,8 +14,9 @@ import java.util.Date;
  * @author jia
  * @since 2023-06-27 09:30:53
  */
+@Data
 @TableName("Sys_dict_type")
-public class SysDictType {
+public class SysDictType extends Field {
     /**
      * 主键
      */
@@ -28,35 +32,5 @@ public class SysDictType {
      * 字典类型
      */
     private String dictType;
-
-    /**
-     * 创建者
-     */
-    private String createBy;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 更新者
-     */
-    private String updateBy;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
-
-    /**
-     * 备注
-     */
-    private String remark;
-
-    /**
-     * 删除标识
-     */
-    private Integer isDeleted;
 }
 
