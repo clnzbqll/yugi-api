@@ -12,7 +12,7 @@ import javax.annotation.Resource;
  * @since 2023-06-27 15:06:35
  */
 @RestController
-@RequestMapping("sysUser")
+@RequestMapping("/api/sys/user")
 public class SysUserController {
     /**
      * 服务对象

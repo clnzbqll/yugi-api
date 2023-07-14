@@ -3,7 +3,7 @@ package com.example.yugi.model.sys.entity.domain;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.example.yugi.common.entity.Field;
+import com.example.yugi.common.entity.base.Field;
 import lombok.Data;
 
 /**

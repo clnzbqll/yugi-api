@@ -1,7 +1,7 @@
 package com.example.yugi.model.sys.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.yugi.model.sys.entity.domain.SysUser;
+import com.example.yugi.common.entity.security.SysUser;
 
 /**
  * 用户信息数据库访问层

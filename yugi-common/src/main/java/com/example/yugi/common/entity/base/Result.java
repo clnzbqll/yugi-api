@@ -1,4 +1,4 @@
-package com.example.yugi.common.entity;
+package com.example.yugi.common.entity.base;
 
 import lombok.*;
 
@@ -36,11 +36,31 @@ public class Result<T> {
     /**
      * 返回成功消息
      *
+     * @return 成功消息
+     */
+    public static <T> Result<T> success() {
+        return new Result<>(SUCCESS_CODE, SUCCESS, null);
+    }
+
+    /**
+     * 返回成功消息
+     *
      * @param data 数据
      * @return 成功消息
      */
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<>(SUCCESS_CODE, SUCCESS, data);
+        return result;
+    }
+
+    /**
+     * 返回错误消息
+     *
+     * @param msg 返回内容
+     * @return 警告消息
+     */
+    public static <T> Result<T> error(String msg) {
+        Result<T> result = new Result<>(ERROR_CODE, msg, null);
         return result;
     }
 }

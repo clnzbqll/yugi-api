@@ -1,6 +1,7 @@
-package com.example.yugi.model.sys.entity.domain;
+package com.example.yugi.common.entity.security;
 
-import com.example.yugi.common.entity.Field;
+import com.example.yugi.common.entity.base.Field;
+import lombok.Data;
 
 /**
  * 用户信息实体类
@@ -8,6 +9,7 @@ import com.example.yugi.common.entity.Field;
  * @author jia
  * @since 2023-06-27 15:06:36
  */
+@Data
 public class SysUser extends Field {
     /**
      * 主键id
@@ -23,11 +25,6 @@ public class SysUser extends Field {
      * 密码
      */
     private String password;
-
-    /**
-     * 盐
-     */
-    private String salt;
 
     /**
      * 头像

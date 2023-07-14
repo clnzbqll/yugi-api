@@ -1,4 +1,4 @@
-package com.example.yugi.common.entity;
+package com.example.yugi.common.entity.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,8 +1,8 @@
 package com.example.yugi.api.sys;
 
-import com.example.yugi.common.entity.Query;
-import com.example.yugi.common.entity.Result;
-import com.example.yugi.common.entity.Table;
+import com.example.yugi.common.entity.base.Query;
+import com.example.yugi.common.entity.base.Result;
+import com.example.yugi.common.entity.base.Table;
 import com.example.yugi.model.sys.entity.domain.SysDictType;
 import com.example.yugi.service.sys.ISysDictTypeService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +25,7 @@ public class SysDictTypeController {
     @Resource
     private ISysDictTypeService sysDictTypeService;
 
+    // TODO 测试方法，待完善
     @GetMapping("/page")
     public Result<Table<SysDictType>> page(Query query){
         return Result.success(sysDictTypeService.page(query));

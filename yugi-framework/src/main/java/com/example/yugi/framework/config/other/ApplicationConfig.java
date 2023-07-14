@@ -1,4 +1,4 @@
-package com.example.yugi.framework;
+package com.example.yugi.framework.config.other;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;

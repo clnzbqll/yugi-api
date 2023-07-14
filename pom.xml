@@ -20,6 +20,8 @@
         <yugi.version>0.0.1-SNAPSHOT</yugi.version>
         <pagehelper.version>1.4.0</pagehelper.version>
         <mybaits.plus.version>3.2.0</mybaits.plus.version>
+        <jwt.version>0.9.1</jwt.version>
+        <commons.io.version>2.11.0</commons.io.version>
     </properties>
 
     <!-- 父模块需引入子模块 -->              <!-- 子模块间的依赖模型       -->
@@ -58,7 +60,14 @@
                 <version>${pagehelper.version}</version>
             </dependency>
 
-            <!-- Yugi Framework-->
+            <!-- JWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+
+            <!-- Yugi Framework -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>yugi-framework</artifactId>

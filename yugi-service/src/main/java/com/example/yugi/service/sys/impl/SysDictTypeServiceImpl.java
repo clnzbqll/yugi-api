@@ -1,8 +1,8 @@
 package com.example.yugi.service.sys.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.yugi.common.entity.Query;
-import com.example.yugi.common.entity.Table;
+import com.example.yugi.common.entity.base.Query;
+import com.example.yugi.common.entity.base.Table;
 import com.example.yugi.model.sys.mapper.SysDictTypeMapper;
 import com.example.yugi.model.sys.entity.domain.SysDictType;
 import com.example.yugi.service.sys.ISysDictTypeService;
@@ -24,6 +24,7 @@ public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDi
     @Resource
     private SysDictTypeMapper sysDictTypeMapper;
 
+    // TODO 测试方法，待完善
     @Override
     public Table<SysDictType> page(Query query) {
         Page<Object> page = PageHelper.startPage(query.getPageNum(), query.getPageSize());
