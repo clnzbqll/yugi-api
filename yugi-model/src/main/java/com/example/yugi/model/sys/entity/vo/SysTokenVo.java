@@ -1,8 +1,8 @@
 package com.example.yugi.model.sys.entity.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import java.io.Serializable;
 
 /**
  * 系统token视图对象
@@ -12,8 +12,10 @@ import lombok.Setter;
  */
 @Setter
 @Getter
+@ToString
+@NoArgsConstructor
 @AllArgsConstructor
-public class SysTokenVo {
+public class SysTokenVo implements Serializable {
     /**
      * token
      */

@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @since 2023-06-23 09:46:28
  */
 @Slf4j
-@SpringBootTest(classes = {YugiAdminApplication.class})//测试类需要指定启动类
+@SpringBootTest(classes = {YugiAdminApplication.class})
 class SecurityTests {
     /**
      * 默认编码器测试

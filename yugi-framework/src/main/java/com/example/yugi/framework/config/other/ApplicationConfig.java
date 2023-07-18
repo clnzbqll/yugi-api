@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * 程序配置
+ * Yugi程序配置
  * （执行顺序：@Configuration -> @SpringBootApplication）
  *
  * @author jia
