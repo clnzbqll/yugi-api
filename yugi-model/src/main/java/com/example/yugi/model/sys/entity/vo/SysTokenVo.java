@@ -10,9 +10,7 @@ import java.io.Serializable;
  * @author jia
  * @since 2023-07-13 14:48:33
  */
-@Setter
-@Getter
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class SysTokenVo implements Serializable {

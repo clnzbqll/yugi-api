@@ -24,7 +24,6 @@ public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDi
     @Resource
     private SysDictTypeMapper sysDictTypeMapper;
 
-    // TODO 测试方法，待完善
     @Override
     public Table<SysDictType> page(Query query) {
         Page<Object> page = PageHelper.startPage(query.getPageNum(), query.getPageSize());

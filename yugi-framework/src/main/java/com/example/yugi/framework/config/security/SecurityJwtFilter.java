@@ -28,6 +28,14 @@ public class SecurityJwtFilter extends OncePerRequestFilter {
     private ISysTokenService sysTokenService;
 
     /**
+     * 登入请求 -> 密钥鉴权 -> 保管登入信息 -> 返回token
+     */
+
+    /**
+     * 其他请求 -> 解析token -> 获取登入信息 -> 执行业务
+     */
+
+    /**
      * 过滤请求
      *
      * @param request  http请求
@@ -38,7 +46,7 @@ public class SecurityJwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         SecurityUser securityUser = sysTokenService.parse(request);
         if (securityUser != null && SecurityUtils.getAuthentication() == null) {
-            // TODO 整合redis后加入刷新令牌机制
+            sysTokenService.verify(securityUser, request);
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(securityUser, null, null);
             authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);

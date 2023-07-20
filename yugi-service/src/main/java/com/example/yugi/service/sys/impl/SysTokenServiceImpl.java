@@ -1,16 +1,17 @@
 package com.example.yugi.service.sys.impl;
 
 import com.example.yugi.common.entity.security.SecurityUser;
-import com.example.yugi.common.entity.security.SysUser;
 import com.example.yugi.common.utils.JwtUtils;
 import com.example.yugi.model.sys.entity.vo.SysTokenVo;
 import com.example.yugi.service.sys.ISysTokenService;
-import com.example.yugi.service.sys.ISysUserService;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import static com.example.yugi.common.entity.security.SecurityConst.*;
 
 /**
  * 系统令牌服务实现类
@@ -21,9 +22,8 @@ import java.util.UUID;
 @Service("sysTokenService")
 public class SysTokenServiceImpl implements ISysTokenService {
     @Resource
-    private ISysUserService sysUserService;
+    private RedisTemplate redisTemplate;
 
-    // TODO 换个合适的方法名字
     /**
      * 保管用户登入信息并创建令牌
      *
@@ -32,18 +32,14 @@ public class SysTokenServiceImpl implements ISysTokenService {
      */
     @Override
     public SysTokenVo create(SecurityUser securityUser) {
-        // TODO 此方法除redis外均已完成，全完成后删除输出语句，整理代理，添加注释
-        String uuid = UUID.randomUUID().toString();
-        System.out.println(uuid);
-        securityUser.setUuid(uuid);
-
-        // TODO 使用redis以uuid为key将loginUser信息放入缓存中
-
-        String token = JwtUtils.create(uuid);
-        return new SysTokenVo(token);
+        // 生成uuid
+        String uuid = YUGI_LOGIN + UUID.randomUUID().toString();
+        // 保管登入信息
+        redisTemplate.opsForValue().set(uuid, securityUser, EXPIRE, TimeUnit.MINUTES);
+        // 返回token
+        return new SysTokenVo(JwtUtils.create(uuid));
     }
 
-    // TODO 换个合适的方法名字
     /**
      * 解析token并获取用户信息
      *
@@ -55,14 +51,25 @@ public class SysTokenServiceImpl implements ISysTokenService {
         return Optional.ofNullable(JwtUtils.get(request))
                 .map(token -> {
                     String uuid = JwtUtils.parse(token);
-
-                    // TODO 从redis缓存中获取用户信息，暂时手动生成一个LoginUser对象
-                    SecurityUser securityUser = new SecurityUser();
-                    securityUser.setUuid(uuid.replace("tdd:odms:login_tokens:", ""));
-                    System.out.println(securityUser.getUuid());
-                    SysUser user = sysUserService.find("clnzbqll");
-                    securityUser.setUser(user);
+                    SecurityUser securityUser = (SecurityUser) redisTemplate.opsForValue().get(uuid);
                     return securityUser;
                 }).orElse(null);
+    }
+
+    /**
+     * 校验令牌有效期
+     * （不足20分钟则刷新有效期）
+     *
+     * @param securityUser 用户登入信息
+     * @param request http请求
+     */
+    @Override
+    public void verify(SecurityUser securityUser, HttpServletRequest request) {
+        Optional.ofNullable(JwtUtils.get(request))
+                .map(token -> JwtUtils.parse(token))
+                .filter(uuid -> redisTemplate.getExpire(uuid, TimeUnit.MINUTES) <= LIMIT)
+                .ifPresent(uuid -> {
+                    redisTemplate.opsForValue().set(uuid, securityUser, EXPIRE, TimeUnit.MINUTES);
+                });
     }
 }

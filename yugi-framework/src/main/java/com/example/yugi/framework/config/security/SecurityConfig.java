@@ -20,6 +20,8 @@ import javax.annotation.Resource;
 public class SecurityConfig {
     @Resource
     private SecurityJwtFilter securityJwtFilter;
+    @Resource
+    private SecurityEntryPointHander securityEntryPointHander;
 
     /**
      * Security配装顺序：
@@ -53,7 +55,9 @@ public class SecurityConfig {
                 .csrf().disable()
                 // 禁用session
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                // 使用自定义过滤器
+                // 认证异常处理类
+                .exceptionHandling().authenticationEntryPoint(securityEntryPointHander).and()
+                // 过滤器
                 .addFilterBefore(securityJwtFilter, UsernamePasswordAuthenticationFilter.class)
                 // 开放请求
                 .authorizeHttpRequests(auth -> auth

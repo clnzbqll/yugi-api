@@ -1,9 +1,7 @@
 package com.example.yugi.common.entity.security;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
@@ -14,15 +12,9 @@ import java.util.Collection;
  * @author jia
  * @since 2023-07-06 17:01:08
  */
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class SecurityUser implements UserDetails {
-    /**
-     * uuid
-     */
-    private String uuid;
-
     /**
      * 用户
      */

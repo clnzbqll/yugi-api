@@ -15,6 +15,12 @@
     <description>yugi-framework</description>
 
     <dependencies>
+        <!-- Fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
         <!-- Yugi Service -->
         <dependency>
             <groupId>com.example</groupId>

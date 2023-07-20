@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface ISysTokenService {
     /**
-     * 保管用户登入信息并创建令牌
+     * 创建token并保管用户登入信息
      *
      * @param securityUser 用户登入信息
      * @return token
@@ -26,4 +26,13 @@ public interface ISysTokenService {
      * @return 用户信息
      */
     SecurityUser parse(HttpServletRequest request);
+
+    /**
+     * 校验令牌有效期
+     * （不足20分钟则刷新有效期）
+     *
+     * @param securityUser 用户登入信息
+     * @param request http请求
+     */
+    void verify(SecurityUser securityUser, HttpServletRequest request);
 }
