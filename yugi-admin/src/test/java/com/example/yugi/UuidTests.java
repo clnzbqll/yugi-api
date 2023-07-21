@@ -14,7 +14,7 @@ import java.util.UUID;
 @Slf4j
 public class UuidTests {
     /**
-     * JDK原生生成测试
+     * JDK原生UUID测试
      */
     @Test
     void protogenTest() {
@@ -23,7 +23,7 @@ public class UuidTests {
     }
 
     /**
-     * 时间戳生生成测试
+     * 时间戳UUID测试
      */
     @Test
     void timestampTest() {
