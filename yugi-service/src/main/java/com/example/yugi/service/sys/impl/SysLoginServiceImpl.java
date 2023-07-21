@@ -1,6 +1,7 @@
 package com.example.yugi.service.sys.impl;
 
 import com.example.yugi.common.entity.security.SecurityUser;
+import com.example.yugi.common.enums.Msg;
 import com.example.yugi.common.exception.YugiException;
 import com.example.yugi.model.sys.entity.vo.SysTokenVo;
 import com.example.yugi.service.sys.ISysLoginService;
@@ -41,8 +42,7 @@ public class SysLoginServiceImpl implements ISysLoginService {
             // 返回token
             return sysTokenService.create(securityUser);
         }catch(Exception e){
-            // TODO 异常国际化
-            throw new YugiException("用户名或密码错误");
+            throw new YugiException(Msg.ERR_LOGIN);
         }
     }
 }

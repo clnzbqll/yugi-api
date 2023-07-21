@@ -8,6 +8,8 @@ spring:
     active: test
   main:
     allow-circular-references: true
+  messages:
+    basename: i18n/messages          # 国际化资源文件
 
 # 日志配置
 logging:

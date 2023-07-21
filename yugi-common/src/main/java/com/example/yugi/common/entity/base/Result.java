@@ -1,5 +1,7 @@
 package com.example.yugi.common.entity.base;
 
+import com.example.yugi.common.enums.Msg;
+import com.example.yugi.common.utils.MessageUtils;
 import lombok.*;
 
 /**
@@ -54,13 +56,24 @@ public class Result<T> {
     }
 
     /**
-     * 返回错误消息
+     * 返回警告消息
      *
      * @param msg 返回内容
      * @return 警告消息
      */
     public static <T> Result<T> error(String msg) {
         Result<T> result = new Result<>(ERROR_CODE, msg, null);
+        return result;
+    }
+
+    /**
+     * 返回国际化错误消息
+     *
+     * @param msg 消息
+     * @return 国际化警告消息
+     */
+    public static <T> Result<T> error(Msg msg) {
+        Result<T> result = new Result<>(ERROR_CODE, MessageUtils.message(msg), null);
         return result;
     }
 }
