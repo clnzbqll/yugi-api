@@ -1,8 +1,9 @@
 package com.example.yugi.common.entity.base;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import java.time.LocalDateTime;
 
 /**
@@ -11,27 +12,30 @@ import java.time.LocalDateTime;
  * @author jia
  * @since 2023-06-27 12:00:41
  */
-@Getter
-@Setter
+@Data
 public class Field {
     /**
      * 创建者
      */
+    @TableField(fill = FieldFill.INSERT)
     private Long createBy;
 
     /**
      * 创建时间
      */
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     /**
      * 更新人
      */
+    @TableField(fill = FieldFill.UPDATE)
     private Long updateBy;
 
     /**
      * 更新时间
      */
+    @TableField(fill = FieldFill.UPDATE)
     private LocalDateTime updateTime;
 
     /**

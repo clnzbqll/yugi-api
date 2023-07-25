@@ -39,6 +39,7 @@ public class JwtUtils {
      */
     public static String get(HttpServletRequest request){
         return Optional.ofNullable(request.getHeader(HEADER))
+//                .filter(token -> !token.equals(""))
                 .map(token -> token.replace(PREFIX, ""))
                 .orElse(null);
     }

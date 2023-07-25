@@ -13,13 +13,13 @@ import lombok.Data;
  * @since 2023-06-27 09:30:53
  */
 @Data
-@TableName("Sys_dict_type")
+@TableName("sys_dict_type")
 public class SysDictType extends Field {
     /**
      * 主键
      */
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
      * 字典名称

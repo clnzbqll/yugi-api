@@ -4,10 +4,9 @@ import com.example.yugi.common.entity.base.Query;
 import com.example.yugi.common.entity.base.Result;
 import com.example.yugi.common.entity.base.Table;
 import com.example.yugi.model.sys.entity.domain.SysDictType;
+import com.example.yugi.model.sys.entity.dto.SysDictTypeDto;
 import com.example.yugi.service.sys.ISysDictTypeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
@@ -25,10 +24,24 @@ public class SysDictTypeController {
     @Resource
     private ISysDictTypeService sysDictTypeService;
 
-    // TODO 测试方法，待完善
+    // TODO 测试接口
     @GetMapping("/page")
     public Result<Table<SysDictType>> page(Query query){
         return Result.success(sysDictTypeService.page(query));
+    }
+
+    // TODO 测试接口
+    @PatchMapping("/update")
+    public Result<?> update (@RequestBody SysDictTypeDto dictTypeDto){
+        sysDictTypeService.update(dictTypeDto);
+        return Result.success();
+    }
+
+    // TODO 测试接口
+    @PostMapping("/save")
+    public Result<?> save (@RequestBody SysDictTypeDto dictTypeDto){
+        sysDictTypeService.save(dictTypeDto);
+        return Result.success();
     }
 }
 
