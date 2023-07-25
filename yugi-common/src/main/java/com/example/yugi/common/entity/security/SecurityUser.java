@@ -1,6 +1,8 @@
 package com.example.yugi.common.entity.security;
 
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.example.yugi.common.entity.base.Field;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,52 +15,96 @@ import java.util.Collection;
  * @since 2023-07-06 17:01:08
  */
 @Data
-@NoArgsConstructor
-public class SecurityUser implements UserDetails {
+//@NoArgsConstructor
+@TableName("sys_user")
+public class SecurityUser extends Field implements UserDetails {
     /**
-     * 用户
+     * 主键id
      */
-    private SysUser user;
+    private Long id;
 
     /**
-     * 鉴权构造函数
+     * 账号
+     */
+    private String account;
+
+    /**
+     * 密码
+     */
+    private String password;
+
+    /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
+     * 手机号
+     */
+    private String phone;
+
+    /**
+     * 邮箱
+     */
+    private String email;
+
+    /**
+     * 获取用户密码
+     * （Security内部使用）
      *
-     * @param user 系统用户
+     * @return 用户密码
      */
-    public SecurityUser(SysUser user) {
-        this.user = user;
-    }
-
     @Override
     public String getPassword() {
-        return getUser().getPassword();
+        return this.password;
     }
 
+    /**
+     * 获取用户账号
+     * （Security内部使用）
+     *
+     * @return 用户账号
+     */
     @Override
     public String getUsername() {
-        return getUser().getAccount();
+        return this.account;
     }
 
+    /**
+     * 略
+     */
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    /**
+     * 略
+     */
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    /**
+     * 略
+     */
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    /**
+     * 略
+     */
     @Override
     public boolean isEnabled() {
         return true;
     }
 
+    /**
+     * 略
+     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

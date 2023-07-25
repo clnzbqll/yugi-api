@@ -1,7 +1,6 @@
 package com.example.yugi;
 
 import com.example.yugi.common.entity.security.SecurityUser;
-import com.example.yugi.common.entity.security.SysUser;
 import com.example.yugi.model.sys.entity.vo.SysTokenVo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -55,9 +54,8 @@ public class RedisTest {
     public void setSecurityUserTest() {
         String key = UUID.randomUUID().toString();
         SecurityUser securityUser = new SecurityUser();
-        SysUser sysUser = new SysUser();
-        sysUser.setPassword("2222");
-        securityUser.setUser(sysUser);
+        securityUser.setAccount("lgl");
+        securityUser.setPassword("123456");
         redisTemplate.opsForValue().set(key, securityUser, 43000, TimeUnit.MINUTES);
         SecurityUser user = (SecurityUser) redisTemplate.opsForValue().get(key);
         log.info("值：{}", user);

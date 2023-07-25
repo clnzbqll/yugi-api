@@ -51,7 +51,7 @@ public class SecurityUtils {
      */
     public static Long getUserId() {
         return Optional.ofNullable(getSecurityUser())
-                .map(securityUser -> securityUser.getUser().getId())
+                .map(securityUser -> securityUser.getId())
                 .orElse(null);
     }
 }

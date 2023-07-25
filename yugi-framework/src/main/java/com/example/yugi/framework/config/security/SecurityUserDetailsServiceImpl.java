@@ -29,7 +29,6 @@ public class SecurityUserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) {
         return Optional.ofNullable(sysUserService.find(username))
-                        .map(user -> new SecurityUser(user))
                 .orElseThrow(YugiException::new);
     }
 }

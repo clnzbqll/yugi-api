@@ -1,7 +1,7 @@
 package com.example.yugi.service.sys.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.yugi.common.entity.security.SysUser;
+import com.example.yugi.common.entity.security.SecurityUser;
 import com.example.yugi.model.sys.mapper.SysUserMapper;
 import com.example.yugi.service.sys.ISysUserService;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  * @since 2023-06-27 15:06:37
  */
 @Service("sysUserService")
-public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SecurityUser> implements ISysUserService {
     @Resource
     private SysUserMapper sysUserMapper;
 
@@ -25,8 +25,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      * @return 用户
      */
     @Override
-    public SysUser find(String account) {
-        return this.lambdaQuery().eq(SysUser::getAccount, account)
+    public SecurityUser find(String account) {
+        return this.lambdaQuery().eq(SecurityUser::getAccount, account)
                 .one();
     }
 }
