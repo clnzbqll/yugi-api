@@ -1,3 +1,7 @@
+# Yugi配置
+yugi:
+  universalPassword: 123456
+
 # Spring配置
 spring:
   # 数据源

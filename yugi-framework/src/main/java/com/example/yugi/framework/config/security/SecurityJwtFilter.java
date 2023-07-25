@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Security自定义Jwt过滤器
+ * SecurityJwt过滤器
  *
  * @author jia
  * @since 2023-07-05 17:09:39

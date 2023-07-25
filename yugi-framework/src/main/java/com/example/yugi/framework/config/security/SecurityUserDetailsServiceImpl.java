@@ -1,6 +1,5 @@
 package com.example.yugi.framework.config.security;
 
-import com.example.yugi.common.entity.security.SecurityUser;
 import com.example.yugi.common.exception.YugiException;
 import com.example.yugi.service.sys.ISysUserService;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.Optional;
 
 /**
- * Security自定义用户数据源服务实现类
+ * Security用户数据源服务实现类
  *
  * @author jia
  * @since 2023-06-29 13:56:02
