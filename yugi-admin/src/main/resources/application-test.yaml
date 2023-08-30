@@ -16,6 +16,7 @@ spring:
     port: 6379
     password: 123456
     timeout: 5000
+    database: 0
     pool:
       min-idle: 0        # 最小空闲连接
       max-idle: 8        # 最大空闲连接
