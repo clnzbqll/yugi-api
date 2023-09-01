@@ -4,6 +4,9 @@ import com.example.yugi.common.enums.Msg;
 import com.example.yugi.common.utils.MessageUtils;
 import lombok.*;
 
+import static com.example.yugi.common.consts.HttpStatus.ERROR;
+import static com.example.yugi.common.consts.HttpStatus.OK;
+
 /**
  * 返回类
  *
@@ -16,9 +19,6 @@ import lombok.*;
 @AllArgsConstructor
 public class Result<T> {
     private static final String SUCCESS = "success";
-    private static final String ERROR = "error";
-    private static final Integer SUCCESS_CODE = 200;
-    private static final Integer ERROR_CODE = 500;
 
     /**
      * 状态码
@@ -41,7 +41,7 @@ public class Result<T> {
      * @return 成功消息
      */
     public static <T> Result<T> success() {
-        return new Result<>(SUCCESS_CODE, SUCCESS, null);
+        return new Result<>(OK, SUCCESS, null);
     }
 
     /**
@@ -51,7 +51,7 @@ public class Result<T> {
      * @return 成功消息
      */
     public static <T> Result<T> success(T data) {
-        Result<T> result = new Result<>(SUCCESS_CODE, SUCCESS, data);
+        Result<T> result = new Result<>(OK, SUCCESS, data);
         return result;
     }
 
@@ -62,18 +62,30 @@ public class Result<T> {
      * @return 警告消息
      */
     public static <T> Result<T> error(String msg) {
-        Result<T> result = new Result<>(ERROR_CODE, msg, null);
+        Result<T> result = new Result<>(ERROR, msg, null);
         return result;
     }
 
     /**
-     * 返回国际化错误消息
+     * 返回警告消息
      *
      * @param msg 消息
      * @return 国际化警告消息
      */
     public static <T> Result<T> error(Msg msg) {
-        Result<T> result = new Result<>(ERROR_CODE, MessageUtils.message(msg), null);
+        Result<T> result = new Result<>(ERROR, MessageUtils.message(msg), null);
+        return result;
+    }
+
+    /**
+     * 返回警告消息
+     *
+     * @param msg 消息
+     * @param msg 消息
+     * @return 国际化警告消息
+     */
+    public static <T> Result<T> error(Integer code, Msg msg) {
+        Result<T> result = new Result<>(code, MessageUtils.message(msg), null);
         return result;
     }
 }
