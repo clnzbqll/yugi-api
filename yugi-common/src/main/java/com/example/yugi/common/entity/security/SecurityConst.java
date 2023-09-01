@@ -24,9 +24,9 @@ public interface SecurityConst {
 
     /**
      * 令牌有效时限
-     * (30天)
+     * (4小时)
      */
-    Long EXPIRE = 43200L;
+    Long EXPIRE = 240L;
 
     /**
      * 令牌刷新时限
