@@ -22,5 +22,11 @@ spring:
       max-idle: 8        # 最大空闲连接
       max-active: 32     # 最大数据库连接数
       max-wait: -1ms     # 最大阻塞等待时间
+  # Nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: dev
 
 

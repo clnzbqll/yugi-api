@@ -17,6 +17,8 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <spring.boot.version>2.7.12</spring.boot.version>
+        <springcloud.version>2021.0.1</springcloud.version>
+        <springcloud.alibaba.version>2021.0.1.0</springcloud.alibaba.version>
         <yugi.version>0.0.1-SNAPSHOT</yugi.version>
         <pagehelper.version>1.4.0</pagehelper.version>
         <mybaits.plus.version>3.2.0</mybaits.plus.version>
@@ -45,6 +47,22 @@
                 <scope>import</scope>
                 <!-- import只能在dependencyManagement中使用，且此时<type>标签值需为pom -->
                 <!-- import表示将spring-boot-dependencies中dependencyManagement下的dependencies导入到当前的dependencyManagement中 -->
+            </dependency>
+
+            <!-- Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Nacos -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${springcloud.alibaba.version}</version>
             </dependency>
 
             <!-- MyBatis-Plus -->

@@ -4,6 +4,8 @@ server:
 
 # Spring配置
 spring:
+  application:
+    name: yugi
   profiles:
     active: test
   main:
