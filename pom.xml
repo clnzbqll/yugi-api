@@ -22,6 +22,7 @@
         <yugi.version>0.0.1-SNAPSHOT</yugi.version>
         <pagehelper.version>1.4.0</pagehelper.version>
         <mybaits.plus.version>3.2.0</mybaits.plus.version>
+        <rocketmq.version>2.1.0</rocketmq.version>
         <jwt.version>0.9.1</jwt.version>
         <commons.io.version>2.11.0</commons.io.version>
         <fastjson.version>1.2.80</fastjson.version>
@@ -70,6 +71,13 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybaits.plus.version}</version>
+            </dependency>
+
+            <!-- RocketMQ -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.version}</version>
             </dependency>
 
             <!-- PageHelper -->
