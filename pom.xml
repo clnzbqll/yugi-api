@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yugi</groupId>
+    <artifactId>yugi-api</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>yugi-api</name>
+
+    <properties>
+        <yugi.version>1.0.0-SNAPSHOT</yugi.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <springboot.version>2.6.3</springboot.version>
+        <jwt.version>0.9.1</jwt.version>
+        <fastjson.version>1.2.80</fastjson.version>
+        <mybatisplus.version>3.2.0</mybatisplus.version>
+        <dynamic.version>3.4.0</dynamic.version>
+        <jackson.version>2.12.3</jackson.version>
+        <oss.version>3.14.0</oss.version>
+        <commons.io.version>2.11.0</commons.io.version>
+        <pagehelper.version>1.4.1</pagehelper.version>
+        <orika.version>1.5.4</orika.version>
+    </properties>
+
+    <modules>
+        <module>yugi-common</module>
+        <module>yugi-model</module>
+        <module>yugi-framework</module>
+        <module>yugi-service</module>
+        <module>yugi-admin</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- Mybatis Plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+
+            <!-- Dynamic -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic.version}</version>
+            </dependency>
+
+            <!-- Pagehelper -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+
+            <!-- JWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+
+            <!-- Aliyun OSS -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${oss.version}</version>
+            </dependency>
+
+            <!-- Commons IO -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Orika -->
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika.version}</version>
+            </dependency>
+
+            <!-- Yugi Framework-->
+            <dependency>
+                <groupId>com.yugi</groupId>
+                <artifactId>yugi-framework</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+
+            <!-- Yugi Service-->
+            <dependency>
+                <groupId>com.yugi</groupId>
+                <artifactId>yugi-service</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+
+            <!-- Yugi Model-->
+            <dependency>
+                <groupId>com.yugi</groupId>
+                <artifactId>yugi-model</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+
+            <!-- Yugi Common-->
+            <dependency>
+                <groupId>com.yugi</groupId>
+                <artifactId>yugi-common</artifactId>
+                <version>${yugi.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

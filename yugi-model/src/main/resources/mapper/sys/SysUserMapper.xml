@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yugi.model.sys.mapper.SysUserMapper">
+    <!-- 分页查询 -->
+    <select id="page" resultType="com.yugi.model.sys.entity.vo.SysUserPageVo">
+        SELECT
+            su.id,
+            su.account,
+            su.PASSWORD,
+            su.avatar,
+            su.phone,
+            su.email,
+            su.STATUS
+        FROM
+            sys_user su
+        <where>
+            su.is_deleted = "0"
+            AND su.status = 0
+            <if test="id != null ">
+                AND su.id = #{id}
+            </if>
+            <if test="account != null and account != ''">
+                AND su.account LIKE concat('%', #{account}, '%')
+            </if>
+        </where>
+    </select>
+
+    <!-- 列表查询 -->
+    <select id="list" resultType="com.yugi.model.sys.entity.vo.SysUserListVo">
+        SELECT
+        su.id,
+        su.account
+        FROM
+        sys_user su
+        <where>
+            su.is_deleted = "0"
+            AND su.status = 0
+            <if test="account != null and account != ''">
+                AND su.account LIKE concat('%', #{account}, '%')
+            </if>
+        </where>
+    </select>
+</mapper>

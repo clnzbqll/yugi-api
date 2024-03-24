@@ -1,0 +1,40 @@
+# Server配置
+server:
+  port: 8282
+  servlet:
+    context-path: /api
+
+# Spring配置
+spring:
+  application:
+    name: yugi-api
+  profiles:
+    active: test
+  messages:
+    basename: i18n/messages          # 国际化资源文件
+
+# 日志配置
+logging:
+  level:
+    com.yugi: debug
+
+# PageHelper分页插件
+pagehelper:
+  auto-runtime-dialect: true
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+# MyBatis配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  typeAliasesPackage: com.yugi.model.**.domain.**
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+
+
+
+

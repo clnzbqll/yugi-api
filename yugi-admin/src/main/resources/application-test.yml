@@ -1,0 +1,34 @@
+# Yugi配置
+yugi:
+  universalPassword: 123456
+
+# Spring配置
+spring:
+  # 数据源
+  datasource:
+    dynamic:
+      primary: mysql
+      hikari:
+        max-pool-size: 5
+        idle-timeout: 120000
+      datasource:
+        mysql:
+          url: jdbc:mysql://127.0.0.1:3306/yugi?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+          username: root
+          password: admin
+  # Redis
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    timeout: 5000
+    database: 0
+    pool:
+      min-idle: 0        # 最小空闲连接
+      max-idle: 8        # 最大空闲连接
+      max-active: 32     # 最大数据库连接数
+      max-wait: -1ms     # 最大阻塞等待时间
+
+
+
+

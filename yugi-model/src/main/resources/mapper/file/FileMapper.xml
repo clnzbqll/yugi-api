@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yugi.model.file.mapper.FileMapper">
+    <!-- 分页查询 -->
+    <select id="page" resultType="com.yugi.model.file.entity.vo.FilePageVo">
+        SELECT
+            f.id,
+            f.`name`,
+            f.postfix,
+            f.type,
+            f.path,
+            f.url,
+            f.size
+        FROM
+            `file` f
+        <where>
+            f.is_deleted = "0"
+            <if test="name != null and name != ''">
+                AND f.name LIKE concat('%', #{name}, '%')
+            </if>
+            <if test="type != null">
+                AND f.type = #{type}
+            </if>
+        </where>
+    </select>
+</mapper>
